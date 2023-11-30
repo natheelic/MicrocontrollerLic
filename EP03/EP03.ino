@@ -32,7 +32,7 @@ void loop()
     int switch2State = digitalRead(switchPins[1]);
     int switch3State = digitalRead(switchPins[2]);
 
-    // Control the LEDs based on the switch states
+    // Control the LEDs based on the switch states 1
     if (switch1State == LOW)
     {
         for (int i = 0; i < 3; i++)
@@ -46,5 +46,20 @@ void loop()
         {
             digitalWrite(ledPins[i], LOW);
         }
+    }
+    // Control the LEDs based on the switch states 2
+    if (switch2State == LOW)
+    {
+        digitalWrite(ledPins[1], HIGH);
+        digitalWrite(ledPins[3], HIGH);
+        digitalWrite(ledPins[5], HIGH);
+        digitalWrite(ledPins[7], HIGH);
+    }
+    else
+    {
+        digitalWrite(ledPins[1], LOW);
+        digitalWrite(ledPins[3], LOW);
+        digitalWrite(ledPins[5], LOW);
+        digitalWrite(ledPins[7], LOW);
     }
 }
