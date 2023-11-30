@@ -1,35 +1,27 @@
 
 // Define the pins for the switches
-const int switch1Pin = 2;
-const int switch2Pin = 3;
-const int switch3Pin = 4;
+byte switchPins[] = {2, 3, 4};
 
 // Define the pins for the LEDs
-const int led1Pin = 5;
-const int led2Pin = 6;
-const int led3Pin = 7;
-const int led4Pin = 8;
-const int led5Pin = 9;
-const int led6Pin = 10;
-const int led7Pin = 11;
-const int led8Pin = 12;
+byte ledPins[] = {5, 6, 7, 8, 9, 10, 11, 12};
 
 void setup()
 {
+    Serial.begin(115200);
     // Set the switch pins as inputs
-    pinMode(switch1Pin, INPUT);
-    pinMode(switch2Pin, INPUT);
-    pinMode(switch3Pin, INPUT);
-
+    for (int i = 0; i < 3; i++)
+    {
+        pinMode(switchPins[i], INPUT_PULLUP);
+        Serial.print("Switch ");
+        Serial.print(i + 1);
+    }
     // Set the LED pins as outputs
-    pinMode(led1Pin, OUTPUT);
-    pinMode(led2Pin, OUTPUT);
-    pinMode(led3Pin, OUTPUT);
-    pinMode(led4Pin, OUTPUT);
-    pinMode(led5Pin, OUTPUT);
-    pinMode(led6Pin, OUTPUT);
-    pinMode(led7Pin, OUTPUT);
-    pinMode(led8Pin, OUTPUT);
+    for (int i = 0; i < 8; i++)
+    {
+        pinMode(ledPins[i], OUTPUT);
+        Serial.print("LED ");
+        Serial.print(i + 1);
+    }
 }
 
 void loop()
