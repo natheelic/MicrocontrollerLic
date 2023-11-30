@@ -26,46 +26,46 @@ void setup()
 
 void loop()
 {
-    // Read the state of the switches
-    int switch1State = digitalRead(switch1Pin);
-    int switch2State = digitalRead(switch2Pin);
-    int switch3State = digitalRead(switch3Pin);
+    // // Read the state of the switches
+    // int switch1State = digitalRead(switch1Pin);
+    // int switch2State = digitalRead(switch2Pin);
+    // int switch3State = digitalRead(switch3Pin);
 
-    // Control the LEDs based on the switch states
-    if (switch1State == HIGH)
-    {
-        digitalWrite(led1Pin, HIGH);
-        digitalWrite(led2Pin, HIGH);
-        digitalWrite(led3Pin, HIGH);
-    }
-    else
-    {
-        digitalWrite(led1Pin, LOW);
-        digitalWrite(led2Pin, LOW);
-        digitalWrite(led3Pin, LOW);
-    }
+    // // Control the LEDs based on the switch states
+    // if (switch1State == HIGH)
+    // {
+    //     digitalWrite(led1Pin, HIGH);
+    //     digitalWrite(led2Pin, HIGH);
+    //     digitalWrite(led3Pin, HIGH);
+    // }
+    // else
+    // {
+    //     digitalWrite(led1Pin, LOW);
+    //     digitalWrite(led2Pin, LOW);
+    //     digitalWrite(led3Pin, LOW);
+    // }
 
-    if (switch2State == HIGH)
-    {
-        digitalWrite(led4Pin, HIGH);
-        digitalWrite(led5Pin, HIGH);
-        digitalWrite(led6Pin, HIGH);
-    }
-    else
-    {
-        digitalWrite(led4Pin, LOW);
-        digitalWrite(led5Pin, LOW);
-        digitalWrite(led6Pin, LOW);
-    }
+    // if (switch2State == HIGH)
+    // {
+    //     digitalWrite(led4Pin, HIGH);
+    //     digitalWrite(led5Pin, HIGH);
+    //     digitalWrite(led6Pin, HIGH);
+    // }
+    // else
+    // {
+    //     digitalWrite(led4Pin, LOW);
+    //     digitalWrite(led5Pin, LOW);
+    //     digitalWrite(led6Pin, LOW);
+    // }
 
-    if (switch3State == HIGH)
-    {
-        digitalWrite(led7Pin, HIGH);
-        digitalWrite(led8Pin, HIGH);
-    }
-    else
-    {
-        digitalWrite(led7Pin, LOW);
-        digitalWrite(led8Pin, LOW);
-    }
+    // if (switch3State == HIGH)
+    // {
+    //     digitalWrite(led7Pin, HIGH);
+    //     digitalWrite(led8Pin, HIGH);
+    // }
+    // else
+    // {
+    //     digitalWrite(led7Pin, LOW);
+    //     digitalWrite(led8Pin, LOW);
+    // }
 }
