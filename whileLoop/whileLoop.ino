@@ -24,18 +24,22 @@ void setup()
 void loop()
 {
     byte switch1State = digitalRead(switchPins[0]);
-    while (switch1State == LOW)
+    if (switch1State == LOW)
     {
-        for (byte j = 0; j < 8; j++)
+        while (switch1State == HIGH)
         {
-            digitalWrite(ledPins[j], HIGH);
-        }
-        switch1State = digitalRead(switchPins[0]);
-        if (switch1State == HIGH)
-        {
-            break;
+            for (byte j = 0; j < 8; j++)
+            {
+                digitalWrite(ledPins[j], HIGH);
+            }
+            switch1State = digitalRead(switchPins[0]);
+            if (switch1State == LOW)
+            {
+                break;
+            }
         }
     }
+
     for (byte j = 0; j < 8; j++)
     {
         digitalWrite(ledPins[j], LOW);
