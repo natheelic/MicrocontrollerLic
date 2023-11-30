@@ -24,6 +24,9 @@ void setup()
 void loop()
 {
     byte switch1State = digitalRead(switchPins[0]);
+    Serial.print("Switch 1111: ");
+    Serial.println(switch1State);
+    delay(50);
     if (switch1State == LOW)
     {
         while (switch1State == HIGH)
@@ -33,6 +36,8 @@ void loop()
                 digitalWrite(ledPins[j], HIGH);
             }
             switch1State = digitalRead(switchPins[0]);
+            Serial.print("Switch 1222: ");
+            Serial.println(switch1State);
             if (switch1State == LOW)
             {
                 break;
