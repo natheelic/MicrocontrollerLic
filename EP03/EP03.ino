@@ -1,10 +1,11 @@
 
 // Define the pins for the switches
-byte switchPins[] = {13, 12, 14};
+byte switchPins[] = {2, 3, 4};
+// byte switchPins[] = {13, 12, 14};
 
 // Define the pins for the LEDs
 // byte ledPins[] = {5, 6, 7, 8, 9, 10, 11, 12};
-byte ledPins[] = {15, 2, 4, 16, 17, 5, 18, 19};
+// byte ledPins[] = {15, 2, 4, 16, 17, 5, 18, 19};
 
 void setup()
 {
@@ -63,7 +64,7 @@ void loop()
         }
     }
     // Control the LEDs based on the switch states 3
-    if (switch2State == LOW)
+    if (switch3State == LOW)
     {
         for (int i = 0; i < 8; i += 2)
         {
