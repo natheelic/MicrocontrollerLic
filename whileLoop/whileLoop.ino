@@ -1,4 +1,3 @@
-
 // Define the pins for the switches
 // byte switchPins[] = {2, 3, 4};
 byte switchPins[] = {13, 12, 14};
@@ -24,14 +23,20 @@ void setup()
 
 void loop()
 {
-    while (digitalRead(switchPins[0]) == LOW)
+    byte switch1State = digitalRead(switchPins[0]);
+    while (switch1State == LOW)
     {
-        for (int j = 0; j < 8; j++)
+        for (byte j = 0; j < 8; j++)
         {
             digitalWrite(ledPins[j], HIGH);
         }
+        switch1State = digitalRead(switchPins[0]);
+        if (switch1State == HIGH)
+        {
+            break;
+        }
     }
-    for (int j = 0; j < 8; j++)
+    for (byte j = 0; j < 8; j++)
     {
         digitalWrite(ledPins[j], LOW);
     }
