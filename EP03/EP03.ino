@@ -50,16 +50,16 @@ void loop()
     // Control the LEDs based on the switch states 2
     if (switch2State == LOW)
     {
-        digitalWrite(ledPins[1], HIGH);
-        digitalWrite(ledPins[3], HIGH);
-        digitalWrite(ledPins[5], HIGH);
-        digitalWrite(ledPins[7], HIGH);
+        for (int i = 1; i < 8; i + 2)
+        {
+            digitalWrite(ledPins[i], HIGH);
+        }
     }
     else
     {
-        digitalWrite(ledPins[1], LOW);
-        digitalWrite(ledPins[3], LOW);
-        digitalWrite(ledPins[5], LOW);
-        digitalWrite(ledPins[7], LOW);
+        for (int i = 1; i < 8; i + 2)
+        {
+            digitalWrite(ledPins[i], LOW);
+        }
     }
 }
