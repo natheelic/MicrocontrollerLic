@@ -1,4 +1,3 @@
-// #include <LedControl.h> ยกเลิกใช้
 #include "LedController.hpp"
 
 // LedControl lc = LedControl(18, 23, 5, 1); ยกเลิกใช้
@@ -17,11 +16,22 @@ void setup() {
 }
 
 void loop() {
-  lc.setRow(0, 7, B01001111);  //E
-  lc.setRow(0, 6, B01110110);  //n
-  lc.setRow(0,3,2,false);
-  lc.setRow(0,2,0,false);
-  lc.setRow(0,1,2,false);
-  lc.setRow(0,0,3,false);
-  while (1);
+
+  // PGM01
+  // lc.setRow(0, 7, B01001111);  //E
+  // lc.setRow(0, 6, B01110110);  //n
+  // lc.setDigit(0,3,2,false);
+  // lc.setDigit(0,2,0,false);
+  // lc.setDigit(0,1,2,false);
+  // lc.setDigit(0,0,3,false);
+  // while (1);
+  // PGM02
+  // byte x,y,z;
+  // esfdsf
+  // dsf
+  // dsf
+  // dsf
+  // s
+  // PGM03
+  
 }
