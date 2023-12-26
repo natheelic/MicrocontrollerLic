@@ -19,9 +19,9 @@ void setup() {
 void loop() {
   lc.setRow(0, 7, B01001111);  //E
   lc.setRow(0, 6, B01110110);  //n
-  lc.setDigit(0,3,2,false);
-  lc.setDigit(0,2,0,false);
-  lc.setDigit(0,1,2,false);
-  lc.setDigit(0,0,3,false);
+  lc.setRow(0,3,2,false);
+  lc.setRow(0,2,0,false);
+  lc.setRow(0,1,2,false);
+  lc.setRow(0,0,3,false);
   while (1);
 }
