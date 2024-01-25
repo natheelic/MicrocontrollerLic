@@ -1,7 +1,6 @@
 #include <WiFi.h>
 #include <WiFiClient.h>
 
-
 #define BLYNK_PRINT Serial
 
 /* Fill in information from Blynk Device Info here */
@@ -19,38 +18,63 @@
 char ssid[] = "EN-LIC";
 char pass[] = "ENLIC2023";
 
-byte led[] = { 13, 12, 14, 27, 26, 25, 33, 32 };
+byte led[] = {13, 12, 14, 27, 26, 25, 33, 32};
 int inPin = 34;
-void setup() {
+int reading = 0;
+BLYNK_WRITE(V0)
+{
+  reading = param.asInt();
+}
+
+void setup()
+{
   Serial.begin(115200);
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass, SERVER_IP, SERVER_PORT);
 
-  for (int i = 0; i < 8; i++) {
+  for (int i = 0; i < 8; i++)
+  {
     pinMode(led[i], OUTPUT);
   }
 }
 
-void loop() {
-  int reading = analogRead(inPin);
+void loop()
+{
+  // int reading = analogRead(inPin);
   Serial.println(reading);
-  if (reading > 0 && reading < 512) {
+  if (reading > 0 && reading < 512)
+  {
     digitalWrite(led[0], HIGH);
-  } else if (reading >= 512 && reading < 1024) {
+  }
+  else if (reading >= 512 && reading < 1024)
+  {
     digitalWrite(led[1], HIGH);
-  } else if (reading >= 1024 && reading < 1536) {
+  }
+  else if (reading >= 1024 && reading < 1536)
+  {
     digitalWrite(led[3], HIGH);
-  } else if (reading >= 2048 && reading < 2560) {
+  }
+  else if (reading >= 2048 && reading < 2560)
+  {
     digitalWrite(led[4], HIGH);
-  } else if (reading >= 2560 && reading < 3072) {
+  }
+  else if (reading >= 2560 && reading < 3072)
+  {
     digitalWrite(led[5], HIGH);
-  } else if (reading >= 3072 && reading < 3584) {
+  }
+  else if (reading >= 3072 && reading < 3584)
+  {
     digitalWrite(led[6], HIGH);
-  } else if (reading >= 3584 && reading < 4096) {
+  }
+  else if (reading >= 3584 && reading < 4096)
+  {
     digitalWrite(led[7], HIGH);
-  } else {
-    // for (int i = 0; i < 8; i++) {
-    //   digitalWrite(led[i], LOW);
-    // }
+  }
+  else if (reading == 0)
+  {
+    for (int i = 0; i < 8; i++)
+    {
+      digitalWrite(led[i], LOW);
+    }
   }
 
   Blynk.run();
